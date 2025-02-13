@@ -49,3 +49,4 @@ var judgment_trials = {
     randomize_order: true
 };
 timeline.push(judgment_trials)
+jsPsych.run(timeline)
