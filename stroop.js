@@ -2,11 +2,11 @@ var jsPsych = initJsPsych();
 
 var timeline = [];
 
-var start_trial = {
-    type: jsPsychHtmlKeyboardResponse,
-    stimulus: "Press any key when ready for the next trial."
-};
-timeline.push(start_trial);
+// var start_trial = {
+//     type: jsPsychHtmlKeyboardResponse,
+//     stimulus: "Press any key when ready for the next trial."
+// };
+// timeline.push(start_trial);
 
 var judgment_trials = {
     type: jsPsychHtmlButtonResponse,
