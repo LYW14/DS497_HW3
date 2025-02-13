@@ -1,3 +1,5 @@
+var jsPsych = initJsPsych();
+
 var timeline = [];
 
 var start_trial = {
