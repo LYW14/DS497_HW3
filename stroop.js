@@ -51,4 +51,14 @@ var judgment_trials = {
     randomize_order: true
 };
 timeline.push(judgment_trials)
+
+const save_data = {
+    type: jsPsychPipe,
+    action: "save",
+    experiment_id: "xte9VlHVTxVU",
+    filename: filename,
+    data_string: ()=>jsPsych.data.get().csv()
+  };
+
+  timeline.push(save_data)
 jsPsych.run(timeline)
