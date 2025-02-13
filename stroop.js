@@ -7,10 +7,21 @@ var timeline = [];
 //     stimulus: "Press any key when ready for the next trial."
 // };
 // timeline.push(start_trial);
-
+var timeline_variables = [
+    { word: "red", color: "red" },
+    { word: "red", color: "blue" },
+    { word: "red", color: "green" },
+    { word: "blue", color: "blue" },
+    { word: "blue", color: "red" },
+    { word: "blue", color: "green" },
+    { word: "green", color: "green" },
+    { word: "green", color: "red" },
+    { word: "green", color: "blue" }
+]
+var tvTwice = timeline_variables.concat(timeline_variables);
 var judgment_trials = {
     type: jsPsychHtmlButtonResponse,
-    // prompt: '<p>Press any key when ready for the next trial.</p>',
+    timeline_variables: duplicated_timeline_variables,  // Use duplicated list
     timeline: [
         {
             type: jsPsychHtmlKeyboardResponse, 
@@ -35,18 +46,6 @@ var judgment_trials = {
                 };
             },
         }
-    ],
-    
-    timeline_variables: [
-            { word: "red", color: "red" },
-            { word: "red", color: "blue" },
-            { word: "red", color: "green" },
-            { word: "blue", color: "blue" },
-            { word: "blue", color: "red" },
-            { word: "blue", color: "green" },
-            { word: "green", color: "green" },
-            { word: "green", color: "red" },
-            { word: "green", color: "blue" }
     ],
     randomize_order: true
 };
