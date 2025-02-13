@@ -21,7 +21,7 @@ var timeline_variables = [
 var tvTwice = timeline_variables.concat(timeline_variables);
 var judgment_trials = {
     type: jsPsychHtmlButtonResponse,
-    timeline_variables: duplicated_timeline_variables,  // Use duplicated list
+    timeline_variables: tvTwice,  // Use duplicated list
     timeline: [
         {
             type: jsPsychHtmlKeyboardResponse, 
