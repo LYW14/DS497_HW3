@@ -1,6 +1,3 @@
-const colors = ["red", "blue", "green"];
-const words = ["red", "blue", "green"];
-
 var timeline = [];
 
 var start_trial = {
@@ -14,16 +11,30 @@ var judgment_trials = {
     // prompt: '<p>Press any key when ready for the next trial.</p>',
     timeline: [
         {
+            type: jsPsychHtmlKeyboardResponse, 
+            stimulus: "Press any key when ready for the next trial.",
+            choices: "ALL_KEYS"
+        },
+        {
             type: jsPsychHtmlButtonResponse,
             stimulus: function(){
                 let word = jsPsych.timelineVariable('word')
                 let color = jsPsych.timelineVariable('color')
                 return `<p style="color:${color}; font-size:40px;">${word}</p>`;
             },
-            choices: ['MATCH', 'NOT']
-            // trial_duration: 2500
+            choices: ['MATCH', 'NOT'],
+            data: function() {
+                let word = jsPsych.timelineVariable('word');
+                let color = jsPsych.timelineVariable('color');
+                return {
+                    // word: word,
+                    // color: color,
+                    congruent: word === color  //true if correct, false if not
+                };
+            },
         }
     ],
+    
     timeline_variables: [
             { word: "red", color: "red" },
             { word: "red", color: "blue" },
@@ -35,11 +46,6 @@ var judgment_trials = {
             { word: "green", color: "red" },
             { word: "green", color: "blue" }
     ],
-}
-// timeline.push(trial_1);
-
-var trial_1 = {
-    type: jsPsychHtmlButtonResponse, //should be button press
-    stimulus: 'This is trial 2.'
-}
-// timeline.push(trial_2);
+    randomize_order: true
+};
+timeline.push(judgment_trials)
