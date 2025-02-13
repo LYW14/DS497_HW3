@@ -51,8 +51,8 @@ var judgment_trials = {
 };
 timeline.push(judgment_trials)
 
-const subject_id = jsPsych.randomization.randomID(10);
-const filename = `${subject_id}.csv`;
+// const subject_id = jsPsych.randomization.randomID(10);
+const filename = 'HW3_data.csv';
 
 const save_data = {
     type: jsPsychPipe,
@@ -62,5 +62,5 @@ const save_data = {
     data_string: ()=>jsPsych.data.get().csv()
   };
 
-  timeline.push(save_data)
-jsPsych.run(timeline)
+//   timeline.push(save_data)
+jsPsych.run(timeline, save_data)
