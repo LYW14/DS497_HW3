@@ -59,7 +59,8 @@ const save_data = {
     action: "save",
     experiment_id: "xte9VlHVTxVU",
     filename: filename,
-    data_string: ()=>jsPsych.data.get().csv()
+    data_string: ()=>jsPsych.data.get().csv(),
+    on_finish: function(data){alert(data.result.message)}
   };
 
 //   timeline.push(save_data)
