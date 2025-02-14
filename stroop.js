@@ -64,4 +64,4 @@ const save_data = {
   };
 
 //   timeline.push(save_data)
-jsPsych.run(timeline, save_data)
+jsPsych.run([timeline, save_data])
