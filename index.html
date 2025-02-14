@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stroop Task Experiment</title>
     <script src="https://unpkg.com/jspsych@7.3.4/jspsych.js"></script>
-    <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe@0.4"></script>    
+    <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe@1.0.1"></script>    
     <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.3">
     </script>
     <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.2.0">
     </script>
     <link href="https://unpkg.com/jspsych@7.3.4/css/jspsych.css"
 rel="stylesheet" type="text/css" />
+    <script>
+      console.log("jsPsych loaded:", typeof jsPsych !== "undefined");
+      console.log("jsPsychHtmlKeyboardResponse loaded:", typeof jsPsychHtmlKeyboardResponse !== "undefined");
+      console.log("jsPsychPipe loaded:", typeof jsPsychPipe !== "undefined");
+    </script>
+
 </head>
 <body>
     <script src="stroop.js" defer></script>
